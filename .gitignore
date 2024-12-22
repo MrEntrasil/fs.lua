@@ -1,3 +1,6 @@
+# Config vscode
+/.vscode
+
 # Compiled Lua sources
 luac.out
 
