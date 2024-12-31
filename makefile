@@ -1,4 +1,2 @@
 all:
-	g++ -o $(PWD)/bin/fstream.so $(PWD)/src/fstream.cpp -shared -fpic -L $(PWD)/include -I $(PWD)/include
-	clear
-	luajit bin/main.lua
+	g++ -o fslua.so src/main.cpp -shared -fpic -Iinclude
