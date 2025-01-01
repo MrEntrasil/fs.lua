@@ -24,3 +24,24 @@ print(content)
 - fslua.so
 - file.txt
 ```
+## fslua.writefile
+### Usage:
+```
+fslua.writefile(filename: string, content: string) -> true || nil
+```
+### Example:
+```lua
+require("fslua")
+
+local filepath = "foo.txt"
+local success = fslua.writefile(filepath, "bar")
+if success == nil then success = false end
+
+print(("success?: "):format(success))
+```
+### 🌲🌳 Tree:
+```
+- main.lua
+- fslua.so
+- foo.txt
+```

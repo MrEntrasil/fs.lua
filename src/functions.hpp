@@ -8,10 +8,9 @@ extern "C" {
     #include <lauxlib.h>
     #include <lualib.h>
 
-    int readfile(lua_State* L){
-        const char* param1 = luaL_checklstring(L, 1, NULL);
+    int fs_readfile(lua_State* L){
         std::ostringstream oss;
-        std::fstream file(param1);
+        std::ifstream file(luaL_checklstring(L, 1, NULL));
 
         if (!file.is_open()){
             lua_pushnil(L);
@@ -20,11 +19,27 @@ extern "C" {
             lua_pushstring(L, oss.str().c_str());
         }
 
+        file.close();
+        return 1;
+    }
+
+    int fs_writefile(lua_State* L){
+        std::ofstream file(luaL_checklstring(L, 1, NULL));
+
+        if (!file.is_open()) {
+            lua_pushnil(L);
+        } else {
+            file << luaL_checklstring(L, 2, NULL);
+            file.close();
+            lua_pushboolean(L, 1);
+        }
+
         return 1;
     }
 
     static const struct luaL_Reg functions[] = {
-        {"readfile", readfile},
+        {"readfile", fs_readfile},
+        {"writefile", fs_writefile},
         {NULL, NULL}
     };
 }
