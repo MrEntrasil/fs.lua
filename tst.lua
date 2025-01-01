@@ -1,9 +1,7 @@
 require("fslua")
-local args = {...}
-local content = fslua.writefile(args[1], args[2])
 
-if content ~= nil then
-    print("Conteudo do arquivo: "..fslua.readfile(args[1]))
-else
-    print("Erro ao ler o arquivo!")
-end
+local filepath = "foo.txt"
+local success = fslua.writefile(filepath, "das")
+if success == nil then success = false end
+
+print(("success?: %s"):format(tostring(success)))
