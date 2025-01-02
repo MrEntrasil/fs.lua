@@ -2,7 +2,7 @@
 ## fslua.readfile
 ### Usage:
 ```
-fslua.readfile(filename: string) -> string || nil
+fslua.readfile(filepath: string) -> string || nil
 ```
 ### Example:
 ```lua
@@ -27,7 +27,7 @@ print(content)
 ## fslua.writefile
 ### Usage:
 ```
-fslua.writefile(filename: string, content: string) -> true || nil
+fslua.writefile(filepath: string, content: string) -> boolean || nil
 ```
 ### Example:
 ```lua
@@ -44,4 +44,22 @@ print(("success?: %s"):format(tostring(success)))
 - main.lua
 - fslua.so
 - foo.txt
+```
+## fslua.exists
+### Usage:
+```
+fslua.exists(path: string) -> boolean
+```
+### Example:
+```lua
+require("fslua")
+
+local dirpath = "."
+local result = fslua.exists(dirpath)
+print(("exists? %s"):format(tostring(result)))
+```
+### 🌲🌳 Tree:
+```
+- main.lua
+- fslua.so
 ```

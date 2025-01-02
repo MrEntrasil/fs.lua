@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <filesystem>
 
 extern "C" {
     #include <lua.h>
@@ -37,9 +38,24 @@ extern "C" {
         return 1;
     }
 
+    int fs_exists(lua_State* L){
+        const bool exists = std::filesystem::exists(luaL_checklstring(L, 1, NULL));
+        int result;
+        if (exists == true) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+
+        lua_pushboolean(L, result);
+
+        return 1;
+    }
+
     static const struct luaL_Reg functions[] = {
         {"readfile", fs_readfile},
         {"writefile", fs_writefile},
+        {"exists", fs_exists},
         {NULL, NULL}
     };
 }
