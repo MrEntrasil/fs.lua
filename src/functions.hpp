@@ -3,11 +3,38 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <dirent.h>
+
+namespace fs = std::filesystem;
 
 extern "C" {
     #include <lua.h>
     #include <lauxlib.h>
     #include <lualib.h>
+
+    int fs_readdir(lua_State* L){
+        DIR *dir;
+        struct dirent *entry;
+        int i;
+        const char *path = luaL_checkstring(L, 1);
+
+        dir = opendir(path);
+        if (dir == NULL) {
+            lua_pushnil(L);
+            return 1;
+        }
+
+        lua_newtable(L);
+        i = 1;
+        while ((entry = readdir(dir)) != NULL) {
+            lua_pushnumber(L, i++);
+            lua_pushstring(L, entry->d_name);
+            lua_settable(L, -3);
+        }
+
+        closedir(dir);
+        return 1;
+    }
 
     int fs_readfile(lua_State* L){
         std::ostringstream oss;
@@ -39,7 +66,7 @@ extern "C" {
     }
 
     int fs_exists(lua_State* L){
-        const bool exists = std::filesystem::exists(luaL_checklstring(L, 1, NULL));
+        const bool exists = fs::exists(luaL_checklstring(L, 1, NULL));
         int result;
         if (exists == true) {
             result = 1;
@@ -56,6 +83,7 @@ extern "C" {
         {"readfile", fs_readfile},
         {"writefile", fs_writefile},
         {"exists", fs_exists},
+        {"readdir", fs_readdir},
         {NULL, NULL}
     };
 }
