@@ -112,3 +112,41 @@ print(type(dir), (function() if dir then return #dir else return nil end end)())
 - fslua.so
 - data.txt
 ```
+
+## fslua.writedir
+### Usage:
+```
+fslua.writedir(dirpath: string) -> true || nil
+```
+### Example:
+```lua
+require("fslua")
+
+local success = fslua.writedir("XIQUE-XIQUE - BA🚩")
+print("success?: ", success)
+```
+### 🌲🌳 Tree:
+```
+- main.lua
+- fslua.so
+--- / XIQUE-XIQUE - BA🚩 \
+```
+
+## fslua.sizeof
+### Usage:
+```
+fslua.sizeof(filepath: string) -> number
+```
+### Example:
+```lua
+require("fslua")
+
+local b = fslua.sizeof("foo.txt")
+print("size(bytes): "..tostring(b))
+```
+### 🌲🌳 Tree:
+```
+- main.lua
+- fslua.so
+- foo.txt
+```
