@@ -1,5 +1,6 @@
 # fstream.lua
 ## fslua.readfile
+Reads the contents of a file using std::ostringstream
 ### Usage:
 ```
 fslua.readfile(filepath: string) -> string || nil
@@ -24,6 +25,7 @@ print(content)
 - fslua.so
 - file.txt
 ```
+
 ## fslua.writefile
 ### Usage:
 ```
@@ -45,6 +47,7 @@ print(("success?: %s"):format(tostring(success)))
 - fslua.so
 - foo.txt
 ```
+
 ## fslua.exists
 ### Usage:
 ```
@@ -63,6 +66,7 @@ print(("exists? %s"):format(tostring(result)))
 - main.lua
 - fslua.so
 ```
+
 ## fslua.readdir
 ### Usage:
 ```
@@ -87,4 +91,24 @@ end
 ```
 - main.lua
 - fslua.so
+```
+
+## fslua.getline
+Reads the contents of a file using std::getline
+### Usage:
+```
+fslua.getline(path: string) -> table || nil
+```
+### Example:
+```lua
+require("fslua")
+
+local dir = fslua.getline("data.txt")
+print(type(dir), (function() if dir then return #dir else return nil end end)())
+```
+### 🌲🌳 Tree:
+```
+- main.lua
+- fslua.so
+- data.txt
 ```
