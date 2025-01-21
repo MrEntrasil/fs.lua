@@ -1,8 +1,5 @@
 #pragma once
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <filesystem>
 #include "file.hpp"
 #include "dir.hpp"
 
@@ -19,6 +16,7 @@ extern "C" {
         {"getline", fs_getline},
         {"writedir", fs_writedir},
         {"sizeof", fs_filesize},
+        {"rm", fs_deletefile},
         {NULL, NULL}
     };
 }

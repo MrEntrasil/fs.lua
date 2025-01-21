@@ -9,6 +9,21 @@ extern "C" {
     #include <lua/lualib.h>
     #include <lua/lua.h>
 
+    int fs_deletefile(lua_State* L){
+        int s = remove(luaL_checklstring(L, 1, NULL));
+
+        if (s == 0)
+        {
+            lua_pushboolean(L, 1);
+        }
+        else if (s == -1)
+        {
+            lua_pushboolean(L, 0);
+        }
+
+        return 1;
+    }
+
     int fs_filesize(lua_State* L){
         lua_pushinteger(L, fs::file_size(luaL_checklstring(L, 1, NULL)));
         return 1;
