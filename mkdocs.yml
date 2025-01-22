@@ -1,3 +1,36 @@
+site_name: fs.lua
+site_url: https://mrentrasil.github.io/fs.lua/
+site_author: MrEntrasil
+repo_name: MrEntrasil/fs.lua
+repo_url: https://github.com/MrEntrasil/fs.lua
+
 nav:
-  - Home: README.md
+  - Home: home.md
+  - Setup: setup.md
   - License: LICENSE.md
+theme:
+  name: material
+  language: en
+  docs_dir: ./
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
