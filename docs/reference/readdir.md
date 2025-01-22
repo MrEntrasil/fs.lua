@@ -15,7 +15,7 @@ if dir_table then
         print(file)
     end
 else
-    print("Could access dir: "..dir)
+    print("Could not access dir: "..dir)
 end
 ```
 ### 🌲🌳 Tree
