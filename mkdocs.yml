@@ -4,15 +4,39 @@ repo_name: MrEntrasil/fs.lua
 repo_url: https://github.com/MrEntrasil/fs.lua
 
 nav:
-  - Home: home.md
-  - Setup: setup.md
+  - Guide:
+    - Setup: guide/setup.md
+  - Reference:
+    - readfile: reference/readfile.md
+    - exists: reference/exists.md
+    - getline: reference/getline.md
+    - readdir: reference/readdir.md
+    - rm: reference/rm.md
+    - sizeof: reference/sizeof.md
+    - writedir: reference/writedir.md
+    - writefile: reference/writefile.md
   - License: LICENSE.md
 theme:
   name: material
   palette:
-    primary: "black"
-    accent: "black"
+    scheme: slate
+    primary: black
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
 
 markdown_extensions:
   - admonition
   - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
