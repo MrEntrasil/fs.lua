@@ -52,8 +52,8 @@ return module
 Now, we can use the functions.<br>
 **main.lua**<br>
 ```lua
-local fs = require("fs.lua")
-local file_content = fs.readfile("fs.lua")
+local fs = require("fs")
+local file_content = fs.read("fs.lua")
 print("file's content: "..file_content)
 ```
 
