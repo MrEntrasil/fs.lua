@@ -1,0 +1,6 @@
+# Directories
+/.vscode
+
+# Files
+*.so
+*.txt
