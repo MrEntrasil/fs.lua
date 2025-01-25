@@ -29,6 +29,8 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate
+  favicon: assets/fs_logo.png
+  logo: assets/fs_logo.png
 
 markdown_extensions:
   - admonition
