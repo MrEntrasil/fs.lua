@@ -4,6 +4,7 @@ repo_name: MrEntrasil/fs.lua
 repo_url: https://github.com/MrEntrasil/fs.lua
 
 nav:
+  - Home: index.md
   - Guide:
     - Setup: guide/setup.md
   - Reference:
