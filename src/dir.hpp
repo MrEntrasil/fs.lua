@@ -24,14 +24,12 @@ extern "C" {
 
     int fs_exists(lua_State* L){
         const bool exists = fs::exists(luaL_checklstring(L, 1, NULL));
-        int result;
-        if (exists == true) {
-            result = 1;
-        } else {
-            result = 0;
-        }
 
-        lua_pushboolean(L, result);
+        if (exists == true) {
+            lua_pushboolean(L, 1);
+        } else if (exists == false) {
+            lua_pushboolean(L, 0);
+        }
 
         return 1;
     }
