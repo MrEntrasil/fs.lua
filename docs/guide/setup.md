@@ -5,11 +5,11 @@
 > WSL/Linux<br>
 ## Install
 download source:
-```bash
+```sh
 git clone https://github.com/MrEntrasil/fs.lua.git --depth=1
 ```
 ## Build
-```bash
+```sh
 cd fs.lua
 make
 mv fslua.so ../fslua.so

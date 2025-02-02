@@ -5,7 +5,7 @@ Ok, this is an example of how you can make a mini project with fs.lua. <br>
 In this tutorial, you will learn how to make a custom fs module. <br>
 
 ### Directories
-```
+```sh
 - fs.lua
 - fslua.so
 - main.lua
@@ -55,6 +55,9 @@ Now, we can use the functions.<br>
 local fs = require("fs")
 local file_content = fs.read("fs.lua")
 print("file's content: "..file_content)
+```
+```sh
+lua main.lua
 ```
 
 ### End
