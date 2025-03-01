@@ -40,7 +40,6 @@ extern "C" {
             lua_pushboolean(L, 1);
         }
 
-        file.close();
         return 1;
     }
 
@@ -52,10 +51,10 @@ extern "C" {
             lua_pushnil(L);
         } else {
             oss << file.rdbuf();
+            file.close();
             lua_pushstring(L, oss.str().c_str());
         }
 
-        file.close();
         return 1;
     }
 
