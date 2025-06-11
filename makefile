@@ -1,5 +1,8 @@
+COMPILER=g++
+FLAGS=-shared -fpic -Iinclude -std=c++17
+
 all:
-	g++ -o fslua.so src/main.cpp -shared -fpic -Iinclude -std=c++17
+	$(COMPILER) -o fslua.so src/main.cpp $(FLAGS)
 
 clean:
 	rm -rf fslua.so
