@@ -5,9 +5,9 @@
 namespace fs = std::filesystem;
 
 extern "C" {
-    #include <lua/lauxlib.h>
-    #include <lua/lualib.h>
-    #include <lua/lua.h>
+    #include <lua5.4/lauxlib.h>
+    #include <lua5.4/lualib.h>
+    #include <lua5.4/lua.h>
 
     int fs_deletefile(lua_State* L){
         int s = remove(luaL_checklstring(L, 1, NULL));

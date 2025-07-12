@@ -6,9 +6,16 @@
 namespace fs = std::filesystem;
 
 extern "C" {
-    #include <lua/lauxlib.h>
-    #include <lua/lualib.h>
-    #include <lua/lua.h>
+    #include <lua5.4/lauxlib.h>
+    #include <lua5.4/lualib.h>
+    #include <lua5.4/lua.h>
+    #include <unistd.h>
+
+    int fs_chdir(lua_State* L) {
+	const char* p = luaL_checkstring(L, 1);
+	chdir(p);
+	return 1;
+    }
 
     int fs_writedir(lua_State* L){
         const bool success = fs::create_directory(luaL_checklstring(L, 1, NULL));

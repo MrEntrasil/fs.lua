@@ -4,9 +4,9 @@
 #include "dir.hpp"
 
 extern "C" {
-    #include <lua/lua.h>
-    #include <lua/lualib.h>
-    #include <lua/lauxlib.h>
+    #include <lua5.4/lua.h>
+    #include <lua5.4/lualib.h>
+    #include <lua5.4/lauxlib.h>
 
     static const struct luaL_Reg functions[] = {
         {"readfile", fs_readfile},
@@ -17,6 +17,7 @@ extern "C" {
         {"writedir", fs_writedir},
         {"sizeof", fs_filesize},
         {"rm", fs_deletefile},
+	{"chdir", fs_chdir},
         {NULL, NULL}
     };
 }

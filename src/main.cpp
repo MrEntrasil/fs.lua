@@ -2,11 +2,11 @@
 #include "functions.hpp"
 
 extern "C" {
-    #include <lua/lua.h>
-    #include <lua/lauxlib.h>
+    #include <lua5.4/lua.h>
+    #include <lua5.4/lauxlib.h>
 
     int luaopen_fslua(lua_State* L){
-        luaL_register(L, "fslua", functions);
+        luaL_newlib(L, functions);
         return 1;
     }
 }

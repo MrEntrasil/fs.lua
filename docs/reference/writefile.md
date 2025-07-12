@@ -5,7 +5,7 @@ fslua.writefile(filepath: string, content: string) -> boolean || nil
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local filepath = "foo.txt"
 local success = fslua.writefile(filepath, "bar")

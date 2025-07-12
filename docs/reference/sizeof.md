@@ -5,7 +5,7 @@ fslua.sizeof(filepath: string) -> number
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local b = fslua.sizeof("foo.txt")
 print("size(bytes): "..tostring(b))

@@ -5,7 +5,7 @@ fslua.writedir(dirpath: string) -> true || nil
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local success = fslua.writedir("XIQUE-XIQUE - BA🚩")
 print("success?: ", success)

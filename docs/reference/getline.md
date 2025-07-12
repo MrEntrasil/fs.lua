@@ -6,7 +6,7 @@ fslua.getline(path: string) -> table || nil
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local dir = fslua.getline("data.txt")
 print((function() if dir then return #dir else return nil end end)())

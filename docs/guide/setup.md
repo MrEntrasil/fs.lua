@@ -1,6 +1,6 @@
 # Setup
 ## Dependencies
-> make<br>
+> lua-dev 5.4<br>
 > g++<br>
 > WSL/Linux<br>
 ## Install

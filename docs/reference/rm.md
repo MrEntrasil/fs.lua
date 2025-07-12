@@ -5,7 +5,7 @@ fslua.rm(path: string) -> boolean
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local success = fslua.rm("foo.txt")
 print(("success?: %s"):format(tostring(success)))

@@ -5,7 +5,7 @@ fslua.readdir(path: string) -> table || nil
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local dir = "."
 local dir_table = fslua.readdir(dir)

@@ -6,7 +6,7 @@ fslua.readfile(filepath: string) -> string || nil
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local filepath = "file.txt"
 local content = fslua.readfile(filepath)

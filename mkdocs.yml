@@ -16,6 +16,7 @@ nav:
     - sizeof: reference/sizeof.md
     - writedir: reference/writedir.md
     - writefile: reference/writefile.md
+    - chdir: reference/chdir.md
   - License: LICENSE.md
 theme:
   name: material

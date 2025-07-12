@@ -5,7 +5,7 @@ fslua.exists(path: string) -> boolean
 ```
 ### Example
 ```lua
-require("fslua")
+local fslua = require("fslua")
 
 local dirpath = "."
 local result = fslua.exists(dirpath)
